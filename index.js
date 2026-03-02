@@ -1,14 +1,13 @@
 import express from "express";
 import fetch from "node-fetch";
-import { HttpsProxyAgent } from "https-proxy-agent";
+import ProxyAgent from "proxy-agent";
 
 /* =========================
    CONFIG
 ========================= */
 
-const PORT = process.env.PORT || 3000;
 const proxyUrl = process.env.PROXY_URL;
-const agent = proxyUrl ? new HttpsProxyAgent(proxyUrl) : undefined;
+const agent = proxyUrl ? new ProxyAgent(proxyUrl) : undefined;
 
 const PRODUCTS_PER_GROUP = 50;
 
