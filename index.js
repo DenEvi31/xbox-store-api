@@ -155,7 +155,8 @@ app.get("/api/list/Deal", async (req, res) => {
 /* =========================
    START SERVER
 ========================= */
-
+console.log("PROXY_URL:", proxyUrl);
+console.log("Agent created:", !!agent); 
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
